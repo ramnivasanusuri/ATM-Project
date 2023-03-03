@@ -126,6 +126,8 @@ func CreateAcc() {
 	c.Acc_pin = int(strtoi(a5))
 
 	check_file()
-
+	
 	addToJSON(c)
+	
+	fmt.Printf("Your account has been created\nYour account number is %v",c.Acc_num)
 }

@@ -1,10 +1,9 @@
 package ExistingUser
 
-import "fmt"
+import ("fmt"
+"ATM/CreateAccount"
+)
 
-func AccDetails() {
-	var n int
-	fmt.Printf("Enter your account number:")
-	fmt.Scan(&n)
-	
+func AccDetails(c CreateAccount.Customer) {
+	fmt.Printf("Account holder name:%s\nAccount number:%v\nAge:%v",c.Cus_name,c.Acc_num,c.Cus_age)
 }
