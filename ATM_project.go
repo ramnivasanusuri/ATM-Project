@@ -1,31 +1,36 @@
 package main
 
 import (
-	"bufio"
+	// "bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
+	// "os"
+	// "strconv"
+	// "strings"
 	"ATM/CreateAccount"
 	"ATM/ExistingUser"
 )
 
 // String to Integer conversion
-func strtoi(s string) int64 {
-	a, _ := strconv.ParseInt(strings.TrimSpace(s), 10, 0)
-	return a
-}
+// func strtoi(s string) int64 {
+// 	a, _ := strconv.ParseInt(strings.TrimSpace(s), 10, 0)
+// 	return a
+// }
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Println("Choose one:\n1.Create an account.\n2.Existing user.")
-	n, _ := reader.ReadString('\n')
-	var i int = int(strtoi(n))
+	// reader := bufio.NewReader(os.Stdin)
+loop:
+	fmt.Println("\nChoose one:\n1.Create an account.\n2.Existing user.")
+	// n, _ := reader.ReadString('\n')
+	// var i int = int(strtoi(n))
+	var i int
+	fmt.Scan(&i)
 	switch i {
 	case 1:
 		CreateAccount.CreateAcc()
+	goto loop
 	case 2:
 		ExistingUser.ExisUser()
+		goto loop
 	}
 }
 
